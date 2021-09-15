@@ -9,7 +9,7 @@ const fruits = require("./models/fruits")
 
 //routes
 app.get('/fruits/', (req,res) =>{
-    res.send(fruits);
+    res.render("index.ejs", {allFruits: fruits});
 });
 
 app.get('/fruits/:indexOfArrayFruits', (req,res) =>{
