@@ -20,4 +20,4 @@ const fruits = [
 //so you are exporting the fruits 
 //you can only have one module.export so to export more than
 //one thing you need to make an object or array 
-modules.exports = fruits
+module.exports = fruits
