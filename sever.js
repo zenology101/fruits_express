@@ -26,6 +26,9 @@ const fruits = require("./models/fruits")
 //application/x-www-form-urlencoded
 app.use(express.urlencoded({extend: false})),
 
+// serve files statically from the public folder
+app.use(express.static("public"))
+
 /////////////////////////////////////////////
 //Routes 
 /////////////////////////////////////////////
