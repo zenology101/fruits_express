@@ -24,7 +24,7 @@ const fruits = require("./models/fruits")
 /////////////////////////////////
 //Parse Request Bodies if Content-Type Header is: 
 //application/x-www-form-urlencoded
-app.use(express.urlencoded({extend: false})),
+app.use(express.urlencoded({extended: false})),
 
 // serve files statically from the public folder
 app.use(express.static("public"))
