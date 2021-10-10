@@ -43,7 +43,7 @@ app.get("/fruits/new", (req, res) => {
   })
 
 //Create route using Post request 
-// Create Route - makes a new fruit
+//Create Route - makes a new fruit
 app.post("/fruits", (req, res) => {
     //process the readyToEat as true or false
     if(req.body.readyToEat === 'on'){
@@ -60,6 +60,7 @@ app.post("/fruits", (req, res) => {
   //show route- gets one fruit (keep your show route at the end)
   //
 app.get('/fruits/:indexOfArrayFruits', (req,res) =>{
+  //render has 2 things, the file that you want to grab data from and an object 
     res.render("show.ejs", {fruit: fruits[req.params.indexOfArrayFruits]});
 });
 
