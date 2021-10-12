@@ -34,12 +34,12 @@ app.use(express.static("public"))
 /////////////////////////////////////////////
 //Index route- gets all fruit 
 app.get('/fruits/', (req,res) =>{
-    res.render("index.ejs", {allFruits: fruits});
+    res.render("index.ejs", {allFruits: fruits, title: "Fruits - Index Page"});
 });
 
 // NEW ROUTE - Renders form to Create Fruit
 app.get("/fruits/new", (req, res) => {
-    res.render("new.ejs")
+    res.render("new.ejs", {title: "Fruits - New Page"})
   })
 
 //Create route using Post request 
@@ -61,7 +61,7 @@ app.post("/fruits", (req, res) => {
   //
 app.get('/fruits/:indexOfArrayFruits', (req,res) =>{
   //render has 2 things, the file that you want to grab data from and an object 
-    res.render("show.ejs", {fruit: fruits[req.params.indexOfArrayFruits]});
+    res.render("show.ejs", {fruit: fruits[req.params.indexOfArrayFruits], title: "Fruits - Show Page"});
 });
 
 
