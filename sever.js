@@ -19,6 +19,10 @@ const app = express();
 //imports my fruits data 
 const fruits = require("./models/fruits")
 
+//import method override
+
+const methodOverride = require('method-override')
+
 ////////////////////////////////////////////
 //Middle Ware
 /////////////////////////////////
@@ -28,6 +32,10 @@ app.use(express.urlencoded({extended: false})),
 
 // serve files statically from the public folder
 app.use(express.static("public"))
+
+//register the method-override middleware 
+app.use(methodOverride('_method'))
+
 
 /////////////////////////////////////////////
 //Routes 
@@ -56,6 +64,12 @@ app.post("/fruits", (req, res) => {
     //redirect (get) to /fruits
     res.redirect("/fruits")
   });
+
+  //delete/destroy route will destroy a fruit 
+  app.delete("/fruits/:indexOfArrayFruits", (req,res) => {
+    fruits.splice(req.params.indexOfArrayFruits,1)
+    res.redirect("/fruits")
+  })
 
   //show route- gets one fruit (keep your show route at the end)
   //

@@ -5,6 +5,7 @@
         <title>Fruits App</title>
     </head>
     <body>
+        <%- include("./partials/header.ejs") %> 
         <h1>Fruits show page</h1>
         <a href="/fruits">Back to Index</a><br>
         The <%= fruit.name %> is <%= fruit.color %>,
@@ -12,6 +13,7 @@
             It is ready to eat 
             <% } else {%>
             It is not ready to eat
-        <% } %>         
+        <% } %>   
+        <%- include("./partials/footer.ejs") %>       
     </body>
 </html> 

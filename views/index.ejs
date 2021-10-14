@@ -4,6 +4,7 @@
         <%- include("./partials/head.ejs") %> 
     </head>
     <body>
+        <%- include("./partials/header.ejs") %> 
         <h1>Fruits Index Page</h1>
         <nav>
              <a href="/fruits/new/">Create New Fruit</a> 
@@ -15,9 +16,13 @@
                     <a href="/fruits/<%= i %>">
                         <%= allFruits[i].name %>
                     </a>
+                    <form action="/fruits/<%= i %>?_method=Delete" method = "Post">
+                        <input type="submit" value = "Delete">
+                    </form>
                 </li>
 
             <% } %>
         </ul>
+        <%- include("./partials/footer.ejs") %> 
     </body>
 </html>
