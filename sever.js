@@ -71,6 +71,15 @@ app.post("/fruits", (req, res) => {
     res.redirect("/fruits")
   })
 
+  // Edit route will give a form to edit a particular todo
+  app.get("/fruits/:indexOfArrayFruits/edit", (req,res) =>{
+    res.render("edit.ejs", {
+      fruit: fruits[req.params.indexOfArrayFruits],
+      index: req.params.indexOfArrayFruits,
+      title: "Fruits App - Edit Page"
+    })
+  })
+
   //show route- gets one fruit (keep your show route at the end)
   //
 app.get('/fruits/:indexOfArrayFruits', (req,res) =>{

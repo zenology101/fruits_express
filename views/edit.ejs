@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create a New Fruit</title>
+</head>
+<body>
+    <%- include("./partials/header.ejs") %> 
+    <h1>Update Fruit Page</h1>
+    <form action="/fruits/<%= index %>?_method=Put " method ="POST">
+        Name: <input type="text" name="name" value = <%= fruit.name %> ><br>
+
+        Color: <input type="text" name="color" value = <%= fruit.color %> ><br>
+
+        Is Ready To Eat: <input 
+        type="checkbox" 
+        name="readyToEat"
+        <% if(fruit.readyToEat === true){ %>
+            checked
+        <% } %> 
+        ><br>
+
+        <input type="submit" value="Create Fruit">
+    </form>
+    <%- include("./partials/footer.ejs") %> 
+</body>
+</html>
