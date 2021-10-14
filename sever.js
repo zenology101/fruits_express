@@ -80,6 +80,20 @@ app.post("/fruits", (req, res) => {
     })
   })
 
+  //update route- receives form data from edit and updates first 
+  app.put("/fruits/:indexOfArrayFruits", (req,res) => {
+    //process the readyToEat as true or false
+    if(req.body.readyToEat === 'on'){
+      req.body.readyToEat = true
+    } else {
+      req.body.readyToEat = false
+    }
+    //Update the fruit
+    fruits[req.params.indexOfArrayFruits] = req.body
+    //Redirect them back to index 
+    res.redirect("/fruits")
+  })
+
   //show route- gets one fruit (keep your show route at the end)
   //
 app.get('/fruits/:indexOfArrayFruits', (req,res) =>{
